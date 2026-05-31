@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台湾旅行 事前準備チェックリスト</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+        * {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .card-transition {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .toast {
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen pb-32">
+
+    <!-- Toast Notification -->
+    <div id="toast" class="hidden fixed top-8 left-1/2 transform -translate-x-1/2 z-50 bg-white px-8 py-4 rounded-2xl shadow-2xl toast">
+        <p id="toast-message" class="text-gray-800 font-medium"></p>
+    </div>
+
+    <!-- Main Container -->
+    <div class="max-w-7xl mx-auto px-6 py-12 lg:py-16">
+
+        <!-- Header -->
+        <div class="mb-16 text-center">
+            <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">🇹🇼 台湾</h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                現地でクレジットカードSMS認証に詰まらないために。<br>
+                日本出発前に必ずチェックしよう。
+            </p>
+        </div>
+
+        <!-- Category: 必須手続き -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 flex items-center">
+                <span class="bg-gradient-to-r from-orange-500 to-red-500 w-2 h-8 rounded-full mr-4"></span>
+                必須手続き
+            </h2>
+            <div class="grid grid-cols-1 gap-6">
+
+                <!-- Card: Taiwan Arrival Card -->
+                <div class="task-card bg-white rounded-2xl shadow-sm p-8 card-transition" data-id="1">
+                    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Taiwan Arrival Card（入国カード）</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">2025年10月以降、紙の入国カード廃止。オンライン事前登録が必須。到着3日前から申請可能。</p>
+                            <a href="https://www.arukikata.co.jp/areainfo/tw-arrivalcard/" target="_blank" class="text-sm text-gray-400 hover:text-gray-600">🔗 情報元: 地球の歩き方</a>
+                        </div>
+                        <div class="flex gap-3 lg:flex-col lg:min-w-[140px]">
+                            <button class="btn-complete px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl font-medium btn-hover card-transition">完了</button>
+                            <button class="btn-skip px-6 py-3 bg-gray-200 text-gray-700 rounded-xl font-medium btn-hover card-transition">スキップ</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Category: 交通・移動 -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 flex items-center">
+                <span class="bg-gradient-to-r from-blue-500 to-cyan-500 w-2 h-8 rounded-full mr-4"></span>
+                交通・移動
+            </h2>
+            <div class="grid grid-cols-1 gap-6">
+
+                <!-- Card: Uber -->
+                <div class="task-card bg-white rounded-2xl shadow-sm p-8 card-transition" data-id="2">
+                    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Uber（配車アプリ）</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">SMS認証が必要。日本で事前登録しておけば現地で安心。クレジットカード登録も日本で完了推奨。</p>
+                            <a href="https://www.tripool.app/ja/articles/best-taiwan-taxi-apps-compared" target="_blank" class="text-sm text-gray-400 hover:text-gray-600">🔗 情報元: tripool</a>
+                        </div>
+                        <div class="flex gap-3 lg:flex-col lg:min-w-[140px]">
+                            <button class="btn-complete px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl font-medium btn-hover card-transition">完了</button>
+                            <button class="btn-skip px-6 py-3 bg-gray-200 text-gray-700 rounded-xl font-medium btn-hover card-transition">スキップ</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: Easy Wallet -->
+                <div class="task-card bg-white rounded-2xl shadow-sm p-8 card-transition" data-id="3">
+                    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Easy Wallet（悠遊カードアプリ）</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">悠遊カードの残高確認アプリ。事前ダウンロードで現地で即使える。中国語のみだが操作は簡単。</p>
+                            <a href="https://my-travel-style.com/taiwan-easy-wallet-app/" target="_blank" class="text-sm text-gray-400 hover:text-gray-600">🔗 情報元: 20代の個人旅行</a>
+                        </div>
+                        <div class="flex gap-3 lg:flex-col lg:min-w-[140px]">
+                            <button class="btn-complete px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl font-medium btn-hover card-transition">完了</button>
+                            <button class="btn-skip px-6 py-3 bg-gray-200 text-gray-700 rounded-xl font-medium btn-hover card-transition">スキップ</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card: YouBike (要注意) -->
+                <div class="task-card bg-white rounded-2xl shadow-sm p-8 card-transition" data-id="4">
+                    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">YouBike 2.0（シェアサイクル）⚠️</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">台湾の電話番号が必要。日本での完全登録は不可。現地SIM購入後に登録するか、クレカで5日間利用可能。</p>
+                            <a href="https://ireblt-yo.com/youbike/" target="_blank" class="text-sm text-gray-400 hover:text-gray-600">🔗 情報元: ireblt-yo</a>
+                        </div>
+                        <div class="flex gap-3 lg:flex-col lg:min-w-[140px]">
+                            <button class="btn-complete px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl font-medium btn-hover card-transition">完了</button>
+                            <button class="btn-skip px-6 py-3 bg-gray-200 text-gray-700 rounded-xl font-medium btn-hover card-transition">スキップ</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Category: お得・キャンペーン -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 flex items-center">
+                <span class="bg-gradient-to-r from-amber-500 to-orange-500 w-2 h-8 rounded-full mr-4"></span>
+                お得・キャンペーン
+            </h2>
+            <div class="grid grid-cols-1 gap-6">
+
+                <!-- Card: 台湾観光局キャンペーン -->
+                <div class="task-card bg-white rounded-2xl shadow-sm p-8 card-transition" data-id="5">
+                    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">台湾観光局「感謝祭」抽選キャンペーン</h3>
+                            <p class="text-gray-600 mb-4 leading-relaxed">5,000元やビジネスクラス航空券が当たる。事前登録＋台湾入国で抽選参加。期間：〜2026年1月30日。</p>
+                            <a href="https://5000.taiwan.net.tw/Draw-prizes_jp.html" target="_blank" class="text-sm text-gray-400 hover:text-gray-600">🔗 情報元: 台湾観光局公式</a>
+                        </div>
+                        <div class="flex gap-3 lg:flex-col lg:min-w-[140px]">
+                            <button class="btn-complete px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-xl font-medium btn-hover card-transition">完了</button>
+                            <button class="btn-skip px-6 py-3 bg-gray-200 text-gray-700 rounded-xl font-medium btn-hover card-transition">スキップ</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Floating Menu Bar -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-2xl z-40">
+        <div class="max-w-7xl mx-auto px-6 py-4 lg:py-5">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+
+                <!-- Counter (Left) -->
+                <div class="flex gap-6 text-sm lg:text-base">
+                    <span class="text-gray-600">未対応: <span id="count-pending" class="font-bold text-gray-900">5</span>件</span>
+                    <span class="text-gray-600">完了: <span id="count-completed" class="font-bold text-green-600">0</span>件</span>
+                    <span class="text-gray-600">スキップ: <span id="count-skipped" class="font-bold text-gray-400">0</span>件</span>
+                </div>
+
+                <!-- Action Buttons (Right) -->
+                <div class="flex gap-3">
+                    <button id="btn-save" class="px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl font-medium shadow-md btn-hover card-transition">
+                        <span class="hidden lg:inline">このリストを保存・共有する</span>
+                        <span class="lg:hidden">リストを保存</span>
+                    </button>
+                    <button id="btn-copy-prompt" class="px-6 py-3 bg-gray-800 text-white rounded-xl font-medium shadow-md btn-hover card-transition">
+                        <span class="hidden lg:inline">他の国用のプロンプトをコピー</span>
+                        <span class="lg:hidden">他の国も作成する</span>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // State management
+        const state = {
+            tasks: {},
+            totalTasks: 5
+        };
+
+        // Parse URL parameters
+        function parseURLParams() {
+            const params = new URLSearchParams(window.location.search);
+            const checked = params.get('checked');
+            const skipped = params.get('skipped');
+
+            if (checked) {
+                checked.split(',').forEach(id => {
+                    if (id) state.tasks[id] = 'completed';
+                });
+            }
+
+            if (skipped) {
+                skipped.split(',').forEach(id => {
+                    if (id) state.tasks[id] = 'skipped';
+                });
+            }
+        }
+
+        // Apply state to UI
+        function applyState() {
+            document.querySelectorAll('.task-card').forEach(card => {
+                const id = card.dataset.id;
+                const status = state.tasks[id] || 'pending';
+
+                card.classList.remove('opacity-50', 'bg-green-50');
+
+                if (status === 'completed') {
+                    card.classList.add('bg-green-50');
+                } else if (status === 'skipped') {
+                    card.classList.add('opacity-50');
+                }
+            });
+
+            updateCounter();
+        }
+
+        // Update counter
+        function updateCounter() {
+            const counts = {
+                pending: 0,
+                completed: 0,
+                skipped: 0
+            };
+
+            for (let i = 1; i <= state.totalTasks; i++) {
+                const status = state.tasks[i] || 'pending';
+                counts[status]++;
+            }
+
+            document.getElementById('count-pending').textContent = counts.pending;
+            document.getElementById('count-completed').textContent = counts.completed;
+            document.getElementById('count-skipped').textContent = counts.skipped;
+        }
+
+        // Show toast
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+
+            toastMessage.textContent = message;
+            toast.classList.remove('hidden');
+
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3000);
+        }
+
+        // Generate URL with state
+        function generateStateURL() {
+            const checked = [];
+            const skipped = [];
+
+            Object.keys(state.tasks).forEach(id => {
+                if (state.tasks[id] === 'completed') checked.push(id);
+                if (state.tasks[id] === 'skipped') skipped.push(id);
+            });
+
+            const params = new URLSearchParams();
+            if (checked.length > 0) params.set('checked', checked.join(','));
+            if (skipped.length > 0) params.set('skipped', skipped.join(','));
+
+            return `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+        }
+
+        // Event listeners for task cards
+        document.querySelectorAll('.task-card').forEach(card => {
+            const id = card.dataset.id;
+            const btnComplete = card.querySelector('.btn-complete');
+            const btnSkip = card.querySelector('.btn-skip');
+
+            btnComplete.addEventListener('click', () => {
+                if (state.tasks[id] === 'completed') {
+                    delete state.tasks[id];
+                } else {
+                    state.tasks[id] = 'completed';
+                }
+                applyState();
+            });
+
+            btnSkip.addEventListener('click', () => {
+                if (state.tasks[id] === 'skipped') {
+                    delete state.tasks[id];
+                } else {
+                    state.tasks[id] = 'skipped';
+                }
+                applyState();
+            });
+        });
+
+        // Save button
+        document.getElementById('btn-save').addEventListener('click', () => {
+            const url = generateStateURL();
+            navigator.clipboard.writeText(url).then(() => {
+                showToast('URLをコピーしました！こちらをブックマークで保存するか、手元で残しておいてね');
+            });
+        });
+
+        // Copy prompt button
+        document.getElementById('btn-copy-prompt').addEventListener('click', () => {
+            const prompt = `# 依頼概要
+旅行前に「日本国内で事前にダウンロード・登録しておくべき現地アプリやタスク」を可視化し、現地でのクレジットカードSMS認証詰みを防止するための、極めてモダンなチェックリスト1ページ（Single Page Application）の開発、および【世界中からアクセスできるURLへの公開（デプロイ）】までを一気通貫で完了させてください。
+
+ユーザーは非エンジニアです。Gitの操作やデプロイ環境の設定などをすべてAI（あなた）が主導し、ターミナル上で次に実行すべきコマンドの提案や実行承認を求めながら、リリースまでエスコートしてください。
+
+# 【最重要】開発〜デプロイまでの実行手順
+このプロンプトを読み込んだら、すぐにコードを書き始めず、必ず以下のステップを順番にユーザーと対話しながら進めてください。
+
+1. **最初の質問:**
+   ユーザーに対して、ファーストステップとして必ず **「どこの国で使いますか？（例：タイ、ベトナム、フランスなど）」** と一言質問してください。
+2. **入力値の判定（エラーハンドリング）:**
+   国名や地域名がニッチすぎて特定できない場合は、「もう少し大きな単位（国名や主要な地域名）で教えていただけますか？」と優しく再入力を促してください。
+3. **自律リサーチ & 実装:**
+   適切な国名が確定したら、その国に必要なデータをWeb等で自律的にリサーチし、静的データとして埋め込んだHTML/ソースコードを生成・配置してください。
+4. **デプロイ（世界への公開）の実行指示（★追加）:**
+   コードの生成が完了したら、ユーザーに対して**「Webページが完成しました！次にこのページを世界中に公開（デプロイ）します。以下のいずれかの方法で自動公開しますので、どちらが良いか選んでエンターを押してください」**と案内し、コマンドを実行（またはユーザーに実行を依頼）して本番URLを発行するところまで責任を持って進めてください。
+   （例: Vercel CLIが使えるなら \`npx vercel\`、Netlifyなら \`npx netlify deploy\`、あるいは静的HTMLを即時ホスティングできる最適な手段をAI側から提案・実行すること）
+
+# リサーチ対象データ
+1. **交通・移動系:** 現地で主流の配車アプリ（Grab, Bolt等）、電子マネー連携アプリ、およびシェアサイクル・電動スクーターアプリ（YouBike等）。
+2. **割引・お得・キャンペーン系:** 旅行者が使える現地観光局の公式キャンペーン、事前にWeb登録するだけで得をする、または現地での出費を抑えられるタスク。
+3. **事前登録が必須な理由と、信頼できるソースURL:**
+   - 「なぜ出発前に日本（国内SIMの状態）でやらないと詰む（または損する）のか」の明確な理由。
+   - その情報の根拠となる、政府・観光局・交通インフラ会社の「公式サイトのURL」を必ず一緒に調査し、データに含めてください。
+
+# 技術スタック & 内部ロジック・状態管理制約
+- **フロントエンド:** HTML, Tailwind CSS, JavaScript (デプロイが最も簡単な1ファイル、あるいは最小限のファイル構成にすること。React/Next.js等を使う場合は、ビルド・デプロイコマンドまであなたが自動構成すること)
+- **データベース:** **【厳守】完全DBレス。**
+- **3状態（3-Status）管理ロジック:**
+  - 各タスクは、**「①未対応」「②完了」「③スキップ」**の3つの状態を持ちます。
+  - ページを開いた時は、URLにクエリパラメータ（例: \`?checked=1,3&skipped=2\`）があればその状態を復元します。
+  - ユーザーが操作する段階では画面リロードやURL書き換えは行わず、メモリ上でのみ状態を変化させてください。
+
+# UI/UX デザイン指針（Airbnb風・AI生成感の徹底排除）
+- **ビジュアル:** 白と淡いグレーを基調とし、アクセントカラーはテラコッタやアースグリーンのような洗練された旅のワクワク感を演出するカラーを1色のみ使用。「Padding」と「Margin」を大胆かつ贅沢に使い、高級な旅の雑誌やAirbnbのような心地よい余白を徹底してください。各要素には繊細なシャドウ（\`shadow-sm\`）と大きめの角丸（\`rounded-2xl\`）を適用。
+- **レイアウト & 3状態の視覚的表現:**
+  - **PC画面:** 2カラム構成。左に固定の国タイトル、右に分類されたカード一覧。
+  - **【未対応】**：通常のカード表示。何もしていない、まだ確認が必要なものとして一目で可視化。
+  - **【完了】**：チェックが入り、心地よいアクセントカラーが適用。
+  - **【スキップ】**：カード全体がスマートに半透明（グレーアウト）になり、明確に意識して除外したことが可視化。
+  - タップエリアは最低 44x44px を確保し、カード内に「完了」ボタンと「スキップ」ボタンを美しく配置。
+- **カードの構成 & コピーライティング:**
+  - 各カードは「タイトル（アプリ名/タスク名）」と「サブタイトル（なぜ出発前にやるべきか）」の2段構成。
+  - 各カードの目立たない位置に、グレーの小さな文字で「🔗 情報元: [公式サイト名]」として根拠URLへのリンクを必ず設置。（説明文は最大60文字以内）。
+
+# フローティングコンポーネント（ステータス＆アクション）
+PC・SP問わず、画面の最下部（または最上部）にスマートな影付きの**フローティングメニューバー**を固定表示してください。
+
+- **メニューバー内の要素配置:**
+  - **左側:** カウンター表示（「未対応: X件 \\| 完了: Y件 \\| スキップ: Z件」）
+  - **右側:** アクションボタンを2つ配置。
+- **画面サイズ（レスポンシブ）によるテキストの最適化:**
+  - **PCサイズ:**
+    - ボタン1: 「このリストを保存・共有する」
+    - ボタン2: 「他の国用のプロンプトをコピー」
+  - **SP（スマホ）サイズ:**
+    - ボタン1: 「リストを保存」
+    - ボタン2: 「他の国も作成する」
+
+# 各アクションボタンの挙動とトースト文言
+1. **「このリストを保存・共有する / リストを保存」ボタン:**
+   - クリックすると、現在のチェック状態パラメータを含んだURLを生成してクリップボードにコピーします。
+   - **トースト文言:** 「URLをコピーしました！こちらをブックマークで保存するか、手元で残しておいてね」という洗練された通知を滑らかに表示。
+2. **「他の国用のプロンプトをコピー / 他の国も作成する」ボタン:**
+   - クリックした際、**「この指示文（いま読んでいるこのプロンプトの文章全体）」がそのまま丸ごとクリップボードにコピーされるように実装してください。**
+   - **トースト文言:** 「プロンプトをコピーしました！Claude Code等でコピーしたものを貼り付けてみてね。そうすると自身が行く国のリストが作れるよ」という通知を表示。`;
+
+            navigator.clipboard.writeText(prompt).then(() => {
+                showToast('プロンプトをコピーしました！Claude Code等でコピーしたものを貼り付けてみてね。そうすると自身が行く国のリストが作れるよ');
+            });
+        });
+
+        // Initialize
+        parseURLParams();
+        applyState();
+    </script>
+</body>
+</html>
